@@ -1,0 +1,10 @@
+<h1>Cocktails#show</h1>
+<h3><%= @cocktail.name %></h3>
+<p><%= @cocktail.ingredients %></p>
+<p><%= @cocktail.doses %></p>
+<p><%= link_to "back to the list", cocktails_path %></p>
+
+
+<p><%= link_to "delete a cocktail", destroy_cocktail_path,
+    method: :delete,
+    data: {confirm: "Are you sure?" } %></p>
