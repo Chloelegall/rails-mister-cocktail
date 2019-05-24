@@ -1,8 +1,25 @@
-<h1>Cocktails#index</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.bbcgoodfood.com/sites/default/files/editor_files/2019/03/prosecco-cocktails.jpg);">
+  <div class="container">
+    <h1><strong>Mixology</strong></h1>
+    <%= link_to "Create your cocktail", new_cocktail_path, class: 'button' %>
+  </div>
+</div>
 
-<h1>All my cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-<h3><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h3>
-<% end %>
 
-<p><%= link_to "create a cocktail", new_cocktail_path %></p>
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(https://f5petdcvm0-flywheel.netdna-ssl.com/wp-content/uploads/2011/04/italian-greyhounds-familystylefood.jpg)">
+      <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="card-product">
+  <% @cocktails.each do |cocktail| %>
+    <img src="https://f5petdcvm0-flywheel.netdna-ssl.com/wp-content/uploads/2011/04/italian-greyhounds-familystylefood.jpg">
+      <div class="card-product-infos">
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+      </div>
+  <% end %>
+</div>

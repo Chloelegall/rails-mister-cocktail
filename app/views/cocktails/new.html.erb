@@ -1,15 +1,6 @@
 <h1>Cocktails#new</h1>
 
-<form action="/cocktails" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <label for="name">Name: </label>
-  <input type="text" name="cocktail[name]" id="name">
-
-  <label for="ingredients">Ingredients: </label>
-  <input type="text" name="cocktail[ingredients]" id="ingredients">
-
-  <label for="doses">Doses: </label>
-  <input type="text" name="cocktail[doses]" id="doses">
-
-  <input type="submit">
-</form>
+<%= simple_form_for @cocktail do |f| %>
+ <%= f.input :name %>
+ <%= f.button :submit %>
+<% end %>
